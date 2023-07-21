@@ -34,6 +34,7 @@ body {
     background-color: var(--card_BG);
     width: 85%;
     min-width: 375px;
+    max-width: 375px;
     flex-direction: column;
 }
 
@@ -108,11 +109,15 @@ h1 {
 
 .card_bottom {
     justify-content: space-between;
-    align-items: first baseline;
 }
 
-.etherum::before {
-    content: url(/images/icon-ethereum.svg);
+.card_bottom>[class="flex"] {
+    flex-grow: 1;
+}
+
+.card_bottom .clock {
+    justify-content: end;
+    flex-grow: 2;
 }
 
 .etherum {
@@ -124,13 +129,9 @@ h1 {
     color: var(--soft-blue);
 }
 
-.time_left::before {
-    content: url(/images/icon-clock.svg);
-}
-
-.time_left::before,
-.etherum::before {
-    padding-right: .5em;
+.time_left,
+.etherum {
+    padding-left: .5em;
 }
 
 hr {
