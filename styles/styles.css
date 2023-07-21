@@ -43,14 +43,46 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.div_img>img {
-    width: 100%;
+.container {
+    position: relative;
     margin-block: 2rem 1.5rem;
+}
+
+.container>* {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay,
+.icon {
+    opacity: 0;
+}
+
+.eye,
+.overlay,
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    background-color: var(--cyan);
+}
+
+.container:hover .overlay {
+    opacity: .5;
+}
+
+.container:hover .icon {
+    opacity: 1;
 }
 
 .equ {
     flex-direction: column;
 }
+
 
 .equ>p {
     color: var(--soft-blue);
@@ -76,6 +108,7 @@ h1 {
 
 .card_bottom {
     justify-content: space-between;
+    align-items: first baseline;
 }
 
 .etherum::before {
@@ -112,7 +145,16 @@ hr {
     width: 2.4rem;
     border: solid .1rem white;
     border-radius: 50%;
+}
 
+.name,
+h1 {
+    cursor: pointer;
+}
+
+.name:hover,
+h1:hover {
+    color: var(--cyan);
 }
 
 .avatar {
